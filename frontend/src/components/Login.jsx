@@ -14,7 +14,7 @@ function Login() {
             return alert('please enter Name or Password')
         }
         try {
-            const res = await axios.post('http://localhost:3000/login', {
+            const res = await axios.post('https://key-manager-backend-delta.vercel.app/login', {
                 name, password
             })
             localStorage.setItem('token', res.data.token);

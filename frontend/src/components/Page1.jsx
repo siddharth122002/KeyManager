@@ -18,7 +18,7 @@ function Page1() {
 
     const getPasswords = async () => {
         try {
-            const res = await axios.get('http://localhost:3000/passwords', {
+            const res = await axios.get('https://key-manager-backend-delta.vercel.app/passwords', {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -35,7 +35,7 @@ function Page1() {
             return alert("Name or Password is empty")
         }
         try {
-            const res = await axios.post('http://localhost:3000/save', form, {
+            const res = await axios.post('https://key-manager-backend-delta.vercel.app/save', form, {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -66,7 +66,7 @@ function Page1() {
     }
     const handleDelete = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:3000/delete/${id}`, {
+            const res = await axios.delete(`https://key-manager-backend-delta.vercel.app/delete/${id}`, {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -90,7 +90,7 @@ function Page1() {
         const updatedPass = passRefs.current[index].value;
 
         try {
-            const res = await axios.put(`http://localhost:3000/update/${id}`, { updatedWeb, updatedPass }, {
+            const res = await axios.put(`https://key-manager-backend-delta.vercel.app/update/${id}`, { updatedWeb, updatedPass }, {
                 headers: {
                     "token": localStorage.getItem('token')
                 }

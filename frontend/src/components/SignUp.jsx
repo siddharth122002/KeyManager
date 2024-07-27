@@ -13,7 +13,7 @@ function SignUp() {
             return alert('please enter Name or Password')
         }
         try {
-            const res = await axios.post('http://localhost:3000/signup', {
+            const res = await axios.post('https://key-manager-backend-delta.vercel.app/signup', {
                 name, password
             })
             if (res.data.status == 201) {
@@ -72,8 +72,6 @@ function SignUp() {
                             className='bg-green-500 hover:bg-green-700 text-white w-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' type='button'>
                             Sign Up
                         </button>
-                        {/* Uncomment the following line if you want to add a Forgot Password link */}
-                        {/* <a className='inline-block align-baseline font-bold text-sm text-green-500 hover:text-green-800' href='#'>Forgot Password?</a> */}
                     </div>
                 </div>
             </div>
