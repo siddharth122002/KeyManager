@@ -14,7 +14,13 @@ const connectDB = async () => {
     }
 }
 connectDB();
-app.use(cors())
+const corsOptions = {
+    origin: 'https://key-manager-frontend.vercel.app/', // Replace with your frontend domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // If you are using cookies or sessions
+};
+app.use(cors(corsOptions))
 app.use(express.json())
 
 app.get('/', (req, res) => {
